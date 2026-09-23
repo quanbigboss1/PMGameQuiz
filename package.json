@@ -1,0 +1,21 @@
+{
+  "name": "lingua-quest",
+  "version": "1.0.0",
+  "description": "Language learning game with Node.js API and SQL Server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/app.js && node --check src/config/database.js && node --check src/routes/api.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

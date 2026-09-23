@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>Lingua Quest | Học ngoại ngữ bằng trò chơi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <section class="auth-screen" id="auth-screen">
+      <div class="auth-art"><span class="auth-orbit orbit-a"></span><span class="auth-orbit orbit-b"></span><div class="auth-symbol">A<span>あ</span></div><b>learn<br />more</b><i>✦</i></div>
+      <div class="auth-panel">
+        <div class="brand auth-brand"><span class="brand-mark">LQ</span><span>Lingua<br />Quest</span></div>
+        <p class="eyebrow">LANGUAGE LEARNING SPACE</p>
+        <h1 id="auth-title">Chào mừng trở lại.</h1>
+        <p class="auth-subtitle" id="auth-subtitle">Đăng nhập để tiếp tục hành trình học ngoại ngữ của bạn.</p>
+        <form id="auth-form" class="auth-form">
+          <div class="register-only hidden"><label for="auth-full-name">Họ và tên</label><input id="auth-full-name" name="fullName" autocomplete="name" placeholder="Nguyễn Văn A" /></div>
+          <div class="register-only hidden"><label for="auth-username">Username</label><input id="auth-username" name="username" autocomplete="username" placeholder="nguyenvana" /></div>
+          <div class="register-only hidden"><label for="auth-email">Email</label><input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" /></div>
+          <div class="login-only"><label for="auth-login">Username hoặc email</label><input id="auth-login" name="login" autocomplete="username" placeholder="quan123 hoặc you@example.com" /></div>
+          <div><label for="auth-password">Mật khẩu</label><input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Tối thiểu 6 ký tự" /></div>
+          <div class="register-only hidden"><label for="auth-country">Quốc gia <span>(không bắt buộc)</span></label><input id="auth-country" name="country" placeholder="Vietnam" /></div>
+          <p class="form-error hidden" id="auth-error"></p>
+          <button class="primary-btn auth-submit" type="submit" id="auth-submit">Đăng nhập <span>→</span></button>
+        </form>
+        <button class="auth-switch" id="auth-switch" type="button">Chưa có tài khoản? <strong>Đăng ký</strong></button>
+      </div>
+    </section>
+
+    <div class="app-shell hidden" id="app-shell">
+      <header class="mobile-navbar">
+        <a class="brand" href="#dashboard"><span class="brand-mark">LQ</span><span>Lingua<br />Quest</span></a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">☰</button>
+      </header>
+      <nav class="mobile-menu hidden" id="mobile-menu" aria-label="Điều hướng mobile">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span>Tổng quan</button>
+        <button class="nav-item" data-view="courses"><span class="nav-icon">✦</span>Khóa học</button>
+        <button class="nav-item" data-view="games"><span class="nav-icon">◈</span>Trò chơi</button>
+        <button class="nav-item" data-view="ranked"><span class="nav-icon">⚔</span>Ranked PvP</button>
+        <button class="nav-item" data-view="leaderboard"><span class="nav-icon">♜</span>Bảng xếp hạng</button>
+      </nav>
+      <aside class="sidebar">
+        <a class="brand" href="#dashboard"><span class="brand-mark">LQ</span><span>Lingua<br />Quest</span></a>
+        <nav class="nav-list" aria-label="Điều hướng chính">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span>Tổng quan</button>
+          <button class="nav-item" data-view="courses"><span class="nav-icon">✦</span>Khóa học</button>
+          <button class="nav-item" data-view="games"><span class="nav-icon">◈</span>Trò chơi</button>
+          <button class="nav-item" data-view="ranked"><span class="nav-icon">⚔</span>Ranked PvP</button>
+          <button class="nav-item" data-view="leaderboard"><span class="nav-icon">♜</span>Bảng xếp hạng</button>
+        </nav>
+        <div class="sidebar-bottom"><div class="streak-card"><span class="streak-fire">✹</span><div><strong id="side-streak">0 ngày</strong><span>Chuỗi học hiện tại</span></div></div><div class="db-status"><span></span>SQL Server connected</div></div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar"><div><p class="top-kicker">LEARNING SPACE</p><h1 id="page-title">Tổng quan</h1></div><div class="profile-wrap"><button class="profile" id="profile-toggle" type="button" aria-expanded="false"><div class="notification">♢</div><div class="avatar" id="user-avatar">LQ</div><div><strong id="user-name">Đang tải...</strong><small id="user-level">...</small></div><span class="chevron">⌄</span></button><div class="profile-dropdown hidden" id="profile-dropdown"><div class="dropdown-summary"><span class="small-avatar" id="dropdown-avatar">LQ</span><div><strong id="dropdown-name">Learner</strong><small id="dropdown-email">account</small></div></div><button type="button" data-account-action="profile">Tài khoản của tôi</button><button type="button" data-account-action="logout" class="logout-btn">Đăng xuất <span>↗</span></button></div></div></header>
+        <div id="app-alert" class="app-alert hidden"></div>
+        <section id="view-dashboard" class="view active-view"></section>
+        <section id="view-courses" class="view"></section>
+        <section id="view-games" class="view"></section>
+        <section id="view-ranked" class="view"></section>
+        <section id="view-leaderboard" class="view"></section>
+      </main>
+    </div>
+    <div class="modal hidden" id="lesson-modal" role="dialog" aria-modal="true" aria-labelledby="lesson-modal-title"><div class="modal-card"><button class="modal-close" data-close-modal aria-label="Đóng">×</button><div id="lesson-modal-content"></div></div></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
